@@ -1,0 +1,1 @@
+{"name":"Local: Tree Diameter","url":"/Users/ankitkumar/Desktop/VS_code/C++/cses/6 Tree/Tree Diameter.cpp","tests":[{"id":1780038463862,"input":"5\n1 2\n1 3\n3 4\n3 5","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/ankitkumar/Desktop/VS_code/C++/cses/6 Tree/Tree Diameter.cpp","group":"local","local":true}
