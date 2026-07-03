@@ -1,29 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
+int fun(vector<long long>& arr,long long x,long long n){
 
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    
-    int n, x;
-    cin >> n >> x;
-    vector<int> arr(n);
-    for(int i=0; i<n; i++) cin >> arr[i];
+    int r=0,l=0;
+    long long sum=0 , ans=0;
+    while(r<n){
+        sum+=arr[r];
+        while(l<=r && sum>x){
+            sum -= arr[l];
+            l++;
+        }
 
-    unordered_map<long long,long long> m;
-    long long count = 0, prefixsum = 0;
+        ans+=r-l+1;
+        r++;
 
-    m[0] = 1; // to count subarrays starting at index 0
-
-    for(int i=0; i<n; i++) {
-        prefixsum += arr[i];
-
-        if(m.find(prefixsum - x) != m.end())
-            count += m[prefixsum - x];
-
-        m[prefixsum]++;
     }
 
-    cout << count << "\n";
+    return ans;
+}
+int main(){
+    
+    long long n, x;
+    cin >> n >> x;
+    vector<long long> arr(n);
+    for(int i=0; i<n; i++) cin >> arr[i];
+    cout<<fun(arr,x,n) - fun(arr,x-1,n)<<endl;
 }

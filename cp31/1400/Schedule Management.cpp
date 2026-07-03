@@ -1,37 +1,31 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int fun(vector<int>& arr,int n,int m){
-
-    map<int,int> fq;
-
-    for(int i=0;i<n;i++)  fq[arr[i]]++;
-    
-    vector<int> temp;
-    for(int i=1;i<=n;i++){
-        temp.push_back(fq[i]);
-    }
-
-    sort(temp.begin(),temp.end());
-
-    int ans =0;
-    while(m>0){
+bool poss(long long mid,vector<long long>& arr,long long n,long long m){
+    long long ans=0;
+    for(int i=0;i<n;i++){
         
     }
-
-    
 }
 
 int main(){
     int t;
     cin>>t;
     while(t--){
-        int n,m;
+        long long n,m;
         cin>>n>>m;
-        vector<int> arr(m);
+        vector<long long> arr(m);
         for(int i=0;i<n;i++)  cin>>arr[i]; 
 
-        cout<<fun(arr,n,m)<<endl;
+        long long l=1,h=1e18,ans=1e18;
+        while(l<=h){
+            long long mid = l+(h-l)/2;
+            if(poss(mid,arr,n,m)){
+                ans = m;
+                h=mid-1;
+            }
+            else l = mid+1;
+        }
 
     }
 

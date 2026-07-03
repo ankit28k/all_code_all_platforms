@@ -1,24 +1,20 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
 int main(){
   int n;
   cin>>n;
 
-  
-  vector<int> pos(n+1);
+  multiset<int> st;
 
-  for(int i=0;i<n;i++) {
-    int val;
-    cin>>val;
-    pos[val] = i;
+  for(int i=0;i<n;i++){
+    int x;
+    cin>>x;
+
+    auto it = st.upper_bound(x);
+    if(it!=st.end()) st.erase(it);
+    st.insert(x);
   }
 
-  int count=1;
+  cout<<st.size()<<endl;
 
-  for(int i=n;i>=2;i--){
-    if(pos[i] > pos[i-1]) count++;
-  }
-
-  cout<<count<<endl;
 }

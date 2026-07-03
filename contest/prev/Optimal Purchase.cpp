@@ -6,11 +6,10 @@ int main(){
     while(t--){
         long long n,a,b;
         cin>>n>>a>>b;
+        long long ans=0;
+        if(a*3<b) cout<<n*a<<endl;
+        else cout<<(n/3)*b + min((n%3)*a , b)<<endl;
         
-        long long allind = n*a;
-        long long mix = (n/3)*b + (n%3)*a;
-        long long allg = ((n+2)/3)*b;
-        cout<<min({allind,mix,allg})<<endl;
 
     }
 
