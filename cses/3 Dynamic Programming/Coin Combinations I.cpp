@@ -2,18 +2,19 @@
 using namespace std;
 
 const int mod = 1e9+7;
-int fun(int idx,int left,vector<int>& arr,vector<vector<int>>& dp){
+int fun(int left,int n,vector<int>& arr,vector<long long>& dp){
 
-  if(idx <0) return 0;
   if(left==0) return 1;
+  
+  if(dp[left] != -1) return dp[left];
 
-  if(dp[idx][left] != -1) return dp[idx][left];
-
-  int t=0,nt=0;
-  if(left>=arr[idx]) t = fun(idx,left-arr[idx],arr,dp);
-  nt = fun(idx-1,left,arr,dp);
-
-  return dp[idx][left] = (t + nt)%mod;
+  long long ans=0;
+  for(int i=0;i<n;i++){
+    if(left>=arr[i]){
+      ans = (ans+fun(left-arr[i],n,arr,dp))%mod;
+    }
+  }
+  return dp[left] = ans;
 
 }
 int main(){
@@ -22,7 +23,7 @@ int main(){
   vector<int> arr(n);
   for(int i=0;i<n;i++) cin>>arr[i];
 
-  vector<vector<int>> dp(n,vector<int>(x+1,-1));
-  cout<<fun(n-1,x,arr,dp)<<endl;
+  vector<long long> dp(x+1,-1);
+  cout<<fun(x,n,arr,dp)<<endl;
 
 }

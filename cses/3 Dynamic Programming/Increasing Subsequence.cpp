@@ -6,16 +6,15 @@ int main(){
     vector<int> arr(n);
     for(int i=0;i<n;i++) cin>>arr[i];
 
-    vector<int> dp(n,1);
-    int ans=0;
+    vector<int> temp;
+    temp.push_back(arr[0]);
+    
     for(int i=0;i<n;i++){
-        for(int j=0;j<i;j++){
-            if(arr[i]>arr[j]) dp[i] = max(dp[i],dp[j]+1);
-        }
-
-        ans = max(ans,dp[i]);
+        int idx = lower_bound(temp.begin(),temp.end(),arr[i]) - temp.begin();
+        if(idx == temp.size()) temp.push_back(arr[i]);
+        else temp[idx] = arr[i];
     }
-    cout<<ans<<endl;
+    cout<<temp.size()<<endl;
 
     
 

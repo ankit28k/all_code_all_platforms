@@ -6,26 +6,22 @@ int main(){
     while(t--){
         int n;
         cin>>n;
-        vector<long long> arr(n);
+        vector<int> arr(n),brr(n);
         for(int i=0;i<n;i++) cin>>arr[i];
+        for(int i=0;i<n;i++) cin>>brr[i];
 
-        vector<long long> ans(n); 
-
-        for(int i=0;i<n-2;i++){
-            long long k = (arr[i+2] - 2*arr[i+1] + arr[i])/2;
-            ans[i+1] = k; 
+        long long sum=0;
+        for(int i=0;i<n;i++){
+            sum += max(arr[i],brr[i]);
         }
 
-        long long s0=0,sn=0;
-        for(int i=1;i<n-1;i++){
-            s0 += ans[i]*i;
-            sn += ans[i]*(n-1-i);
-        } 
-        ans[0] = (arr[n-1] - sn)/(n-1);
-        ans[n-1] = (arr[0] - s0)/(n-1);
+        long long ans=0;
+        for(int i=0;i<n;i++){
+            long long csum = sum - max(arr[i],brr[i]) + arr[i] + brr[i];
+            ans = max(csum,ans);
+        }
+        cout<<ans<<endl;
 
-        for(int i=0;i<n;i++) cout<<ans[i]<<" ";
-        cout<<endl;
     }
 
 }

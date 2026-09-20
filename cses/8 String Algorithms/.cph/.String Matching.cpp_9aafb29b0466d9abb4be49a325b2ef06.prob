@@ -1,0 +1,1 @@
+{"name":"Local: String Matching","url":"/Users/ankitkumar/Desktop/VS_code/C++/cses/8 String Algorithms/String Matching.cpp","tests":[{"id":1783792427306,"input":"saippuakauppias\npp","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/ankitkumar/Desktop/VS_code/C++/cses/8 String Algorithms/String Matching.cpp","group":"local","local":true}

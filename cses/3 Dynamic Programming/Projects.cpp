@@ -1,33 +1,40 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int fun(int idx,int prev,int n,vector<pair<pair<int,int> ,int>>& arr,vector<vector<int>>& dp){
-    if(idx==n) return 0;
+int cidx(vector<vector<long long>>& arr,int val){
+    int l=0,h=arr.size()-1,ans=arr.size();
+    while(l<=h){
+        int m = (l+h)/2;
+        if(arr[m][0]>val){
+            ans = m;
+            h=m-1;
+        }
+        else l = m+1;
 
-    if(dp[idx][prev] != -1) return dp[idx][prev];
+    }
+    return ans;
+}
+long long fun(int idx,int n,vector<vector<long long>>& arr,vector<long long>& dp){
+    if(idx>=n) return 0;
 
-    int t=0 , st = arr[idx].first.first , end = arr[idx].first.second , rew = arr[idx].second;
-    int nt = fun(idx+1,prev,n,arr,dp);
+    if(dp[idx] != -1) return dp[idx];
+    long long nt = fun(idx+1,n,arr,dp);
+    int nxtidx = cidx(arr,arr[idx][1]);
+    long long t = arr[idx][2] + fun(nxtidx,n,arr,dp);
 
-    if(st>prev) t = rew + fun(idx+1,end,n,arr,dp);
-
-    return dp[idx][prev] = max(t,nt);
+    return dp[idx] = max(t,nt);
 }
 int main(){
     int n;
     cin>>n;
-    vector<pair<pair<int,int> ,int>> arr(n);
-
-    unordered_map<int,pair<int,int>> mp;
-    int p=0;
+    vector<vector<long long>> arr(n);
     for(int i=0;i<n;i++) {
-        int a,b,r;
+        long long a,b,r;
         cin>>a>>b>>r;
-        mp[a] = {b,r};
-        
+        arr[i] = {a,b,r};  
     }
 
-    vector<vector<int>> dp(n,vector<int>(p+1,-1));
-    cout<<fun(0,0,n,arr,dp)<<endl;
-
+    sort(arr.begin(),arr.end());
+    vector<long long> dp(n,-1);
+    cout<<fun(0,n,arr,dp)<<endl;
 }

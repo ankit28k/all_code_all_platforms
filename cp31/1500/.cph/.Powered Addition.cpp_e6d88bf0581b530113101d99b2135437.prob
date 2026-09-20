@@ -1,0 +1,1 @@
+{"name":"Local: Powered Addition","url":"/Users/ankitkumar/Desktop/VS_code/C++/cp31/1500/Powered Addition.cpp","tests":[{"id":1786802046926,"input":"1\n2\n2147483648 0\n","output":"32"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/ankitkumar/Desktop/VS_code/C++/cp31/1500/Powered Addition.cpp","group":"local","local":true}

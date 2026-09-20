@@ -1,0 +1,1 @@
+{"name":"Local: Friendly Spiders","url":"/Users/ankitkumar/Desktop/VS_code/C++/cp31/1800/Friendly Spiders.cpp","tests":[{"id":1785671919891,"input":"7\n2 14 9 6 8 15 11\n5 6","output":"3\n5 4 6 "}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/ankitkumar/Desktop/VS_code/C++/cp31/1800/Friendly Spiders.cpp","group":"local","local":true}

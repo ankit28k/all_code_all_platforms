@@ -1,0 +1,1 @@
+{"name":"Local: Min Max Game","url":"/Users/ankitkumar/Desktop/VS_code/C++/contest/Min Max Game.cpp","tests":[{"id":1789296830322,"input":"3\n5\n1 0 1 0 1\n3\n0 0 1\n4\n1 1 0 0","output":"Bessie\nElsie\nBessie"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/ankitkumar/Desktop/VS_code/C++/contest/Min Max Game.cpp","group":"local","local":true}

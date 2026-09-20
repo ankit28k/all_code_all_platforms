@@ -4,6 +4,10 @@ using namespace std;
 long long fun(int l,int r,int player,vector<long long>& arr,vector<vector<vector<long long>>>& dp){
 
     if(l>r) return 0;
+    if(l==r){
+        if(player==0) return arr[l];
+        return 0;
+    }
 
     if(dp[player][l][r] != -1) return dp[player][l][r];
 

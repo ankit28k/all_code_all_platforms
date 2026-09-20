@@ -1,37 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+
 int main(){
     int n;
     long long x;
     cin>>n>>x;
-    vector<long long> arr(n);
+    vector<long long> arr(n) ;
+    vector<pair<long long,long long>> temp;
     for(int i=0;i<n;i++) cin>>arr[i];
 
-    sort(arr.begin(),arr.end());
-    int i=0,j=n-1;
-
-    long long ans=0 , sum=0;
-    while(i<j){
-        if(sum + arr[i] + arr[j]==x) {
-            sum=0;
-            ans++;
-            i++;
-            j--;
+    for(int mask=0;mask< (1LL<<n);mask++){
+        long long sum=0;
+        for(int i=0;i<n;i++){
+            if((mask>>i)&1) sum+=arr[i];
         }
-
-        else if(sum + arr[i] + arr[j]>x){
-            sum=arr[i];
-            ans++;
-            j--;
-        }
-
-        else if(arr[i] + arr[j]<x){
-            sum+=arr[i];
-            i++;
-        }
+        if(sum<=x) temp.push_back({mask,sum});
     }
 
-    cout<<ans<<endl;
+    long long val = (1LL<<n) -1;
 
 }

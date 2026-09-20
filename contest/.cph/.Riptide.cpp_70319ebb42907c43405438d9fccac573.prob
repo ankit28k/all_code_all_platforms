@@ -1,0 +1,1 @@
+{"name":"Local: Riptide","url":"/Users/ankitkumar/Desktop/VS_code/C++/contest/Riptide.cpp","tests":[{"id":1786295250111,"input":"6\n1 2 3\n4 6 1\n3 3 7\n1 7 10\n6 1 9\n1 1 1","output":"1\n2\n0\n3\n3\n0\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/ankitkumar/Desktop/VS_code/C++/contest/Riptide.cpp","group":"local","local":true}

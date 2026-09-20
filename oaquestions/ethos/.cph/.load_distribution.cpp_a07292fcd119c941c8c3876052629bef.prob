@@ -1,0 +1,1 @@
+{"name":"Local: load_distribution","url":"/Users/ankitkumar/Desktop/VS_code/C++/oaquestions/ethos/load_distribution.cpp","tests":[{"id":1788413240525,"input":"5 3\n1 2 3 4 5\n6 3 4 4 4","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/ankitkumar/Desktop/VS_code/C++/oaquestions/ethos/load_distribution.cpp","group":"local","local":true}

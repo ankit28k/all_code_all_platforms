@@ -1,25 +1,34 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int sdivisor(){
-    
-}
 int main(){
     int t;
     cin>>t;
     while(t--){
         int n;
         cin>>n;
-        string arr;
-        cin>>arr;
-
-        set<int> nott ,t , s ;
-        for(int i=0;i<n;i++) { 
-
-            if(arr[i]=='1') t.insert(i+1);
-            else if(arr[i]=='0') nott.insert(i+1);
-            s.insert(i+1);
+        string s;
+        cin>>s;
+        vector<int> arr(n+1);
+        for(int i=1;i<=n;i++) {
+            arr[i] = s[i-1]-'0';
         }
+
+        long long ans=0;
+        vector<bool> vis(n+1,false);
+
+        for(int i=1;i<=n;i++){
+            for(int j=i;j<=n;j+=i){
+                if(arr[j]==1) break;
+                if(!vis[j]) {
+                    ans += i;
+                    vis[j] = true;
+                }
+            }
+        }
+
+        cout<<ans<<endl;
+         
     }
 
 }
